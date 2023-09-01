@@ -14,17 +14,37 @@
         <div class="col-md-6">
             <div class="card mt-4 mx-auto" style="width: 18rem;">
                 <div class="card-body">
-                <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+                   
+                <div  id="carousel{{ $artistic_project->id }}" class="carousel slide carousel-fade pb-3">
+                    <div id="lightgallery" class="carousel-inner">
+                        @foreach ($artistic_project->images as $image)
+                        <a href="{{ asset($image->path) }}" data-lg-size="1600-2400">
+                            <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                <img class="d-block w-100 card-img-top" src="{{ asset($image->path) }}">
+                            </div>
+                            </a>
+                        @endforeach
+                </div>
+            </div>
+
+                
                 <h5 class="card-title">{{ $artistic_project->title}}</h5>
                 <p class="card-text">{{ $artistic_project->description}}</p>
-                <a href="#" class="btn btn-dark">Go</a>
-                <a href="#" class="btn btn-dark">Go</a>
-                <a href="#" class="btn btn-dark">Go</a>
+               {{-- <a href="#" class="btn btn-dark" title="ver más"><i class="fa-solid fa-eye"></i></a>--}}
+                <a href="#" class="btn btn-dark" title="editar"><i class="fa-solid fa-pen-to-square"></i></a>
+               
+                <form method="POST" class="d-inline" action="{{  route('artistic_projects.destroy', ['artistic_project' => $artistic_project->id]) }}">
+                    @csrf
+                    @method('DELETE')
+                    <a href="#" class="btn btn-dark" title="editar" id="destroyProject"><i class="fa-solid fa-trash"></i></a>
+                </form>
             </div>
             </div>    
         </div>   
     @endforeach
     </div>
 </div>
-
+<script type="text/javascript">
+    lightGallery(document.getElementById('lightgallery'));
+</script>
 @endempty

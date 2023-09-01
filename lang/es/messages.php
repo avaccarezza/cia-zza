@@ -9,5 +9,7 @@ return[
     "Title" => "Título",
     "Create" => "Crear",
     "Description" => "Descripción",
+    "Images" => "Imágenes",
+
 
 ];

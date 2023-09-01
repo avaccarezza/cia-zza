@@ -3,11 +3,12 @@
 @section('content')
 
 <div class="container pt-5">
+  
   <div class="row justify-content-center">
-      <div class="col-md-8">
+      <div class="col-md-8">  
           <div class="card ">
               <div class="card-header">{{ __('messages.Artistic-projects') }}</div>
-              <div class="card-body">
+              <div class="card-body">  
                 @include('panel.components.artistic-projects-card')                                                     
               </div>
           </div>

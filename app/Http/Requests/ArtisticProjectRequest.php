@@ -25,7 +25,8 @@ class ArtisticProjectRequest extends FormRequest
     {
         return [
             'title' => ['required', 'max:50'],
-            'description' =>['required', 'max:255'],          
+            'description' =>['required', 'max:255'],
+            'image' => ['nullable', 'image'],          
         ];
     }
 

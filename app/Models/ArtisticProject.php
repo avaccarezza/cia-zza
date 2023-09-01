@@ -9,4 +9,10 @@ class ArtisticProject extends Model
 {
     use HasFactory;
     protected $fillable = ['title', 'description'];
+    protected $with = ['images'];
+
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imageable');
+    }
 }

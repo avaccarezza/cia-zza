@@ -9,16 +9,23 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="{{ URL::asset('../css/styles.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('../css/lightgallery.css') }}">
 
+    <link rel="stylesheet" href="{{ URL::asset('../fontawesome/css/all.min.css') }}">
+
+    
     <link rel="icon" href="ruta/al/tu-icono.png" type="image/png">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link href="{{ URL::asset('../fonts/lg.ttf') }}}}" rel="stylesheet">
+
 
     <!-- Scripts -->
-    
+    <script src="{{ asset('../js/lightgallery.umd.js') }} "></script>
+    <script src="{{ asset('../js/scripts.js') }}"></script>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
@@ -36,7 +43,7 @@
                     <!-- Center Of Navbar -->
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item px-3">
-                            <a class="nav-link" href="{{ url('/') }}"><strong>{{ __('Guido') }}</strong></a>
+                            <a class="nav-link" href="{{ url('/') }}"><strong>{{ __('Guido') }} </strong></a>
                         </li>
                         <li class="nav-item px-3">
                             <a class="nav-link" href="{{ route('artistic_projects.index') }}"><strong>{{ __('messages.Artistic-projects') }}</strong></a>

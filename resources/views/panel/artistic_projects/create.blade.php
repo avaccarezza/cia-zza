@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('messages.New-artistic-project') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route("artistic_projects.store") }}">
+                    <form method="POST" action="{{ route("artistic_projects.store") }}" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="id" >
                         <div class="row mb-3">
@@ -31,6 +31,20 @@
                                 <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description" required autocomplete="description" autofocus>{{ old('description') }}</textarea>
                         
                                 @error('description')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="image" class="col-md-4 col-form-label text-md-end">{{ __('messages.Images') }}</label>
+                        
+                            <div class="col-md-6">
+                                <div class="custom-file">
+                                    <input type="file" accept="image/*" name="images[]" class="form-control" multiple>
+                                </div>
+                                @error('image')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

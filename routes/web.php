@@ -21,8 +21,8 @@ Route::get('/change-language/{locale}', 'LanguageController@changeLanguage')->na
 Route::get('contact', 'ContactFormController@form')->name('contact.form');
 Route::post('send-form', 'ContactFormController@send')->name('contact.send');
 //Projects
-Route::get('artistic_projects','App\Http\Controllers\ArtisticProjectController@index')->name('artistic_projects.index');
-Route::get('educational_projects','App\Http\Controllers\EducationalProjectController@index')->name('educational_projects.index');
+//Route::get('artistic_projects','App\Http\Controllers\ArtisticProjectController@index')->name('artistic_projects.index');
+//Route::get('educational_projects','App\Http\Controllers\EducationalProjectController@index')->name('educational_projects.index');
 
 //Auth
 Auth::routes(['register' => false]);

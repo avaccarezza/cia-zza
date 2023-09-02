@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container"> 
+<div class="container fadeInUp"> 
     <!-- Intro -->
     <div class="card mb-5 bg-light">
     <div class="row justify-content-center"> 
@@ -16,14 +16,14 @@
         </p>
     </div>
     <div class="col-md-6">
-        <p class="text-center fadeInUp"  style="animation-delay:0.2ms;">
+        <p class="text-center">
             <img class="rounded" src="{{ asset('img/home/guido1.png') }}" alt="guido-1">
         </p>
     </div>
 </div>
 </div>
     <!-- Guido -->
-    <div class="card mb-5 bg-light fadeInUp" style="animation-delay:0.2ms;">
+    <div class="card mb-5 bg-light fadeInUp" style="animation-delay:2ms;">
         <h1 class="text-center py-3">GUIDO VACCAREZZA</h1>
     <div class="row align-items-center justify-content-center p-5">
         <div class="col-md-6 mx-auto">

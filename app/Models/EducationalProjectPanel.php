@@ -8,11 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class EducationalProject extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'description'];
-    protected $with = ['images'];
-
-    public function images()
-    {
-        return $this->morphMany(Image::class, 'imageable');
-    }
 }

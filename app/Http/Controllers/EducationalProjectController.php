@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\EducationalProject;
 
 class EducationalProjectController extends Controller
 {
-    public function index()
+    public function index(EducationalProject $educational_project)
     {
-        return view('educational_projects.index');
+        $educational_projects = EducationalProject::orderBy('created_at', 'desc')->get();
+        return view('educational_projects.index', compact('educational_projects'));
     }
+   
 }

@@ -18,11 +18,11 @@
         </p>
     </div>
     <div class="col-md-6 ">
-        <p class="p-5 text-center">
-            {{ $artistic_project->big_description }}
+        <p class="p-3 text-center">
+            {!! nl2br(e($artistic_project->big_description)) !!}
         </p>  
         @if(!empty($artistic_project->link_video))
-        <div class="text-center">
+        <div class="text-center pb-3">
             <a  href="{{ $artistic_project->link_video }}" class="btn btn-dark" title="Ver video">VER VIDEO</a>
         </div>
         @endif

@@ -11,5 +11,11 @@ class EducationalProjectController extends Controller
         $educational_projects = EducationalProject::orderBy('created_at', 'desc')->get();
         return view('educational_projects.index', compact('educational_projects'));
     }
-   
+    public function show(EducationalProject $educational_project)
+    {
+        return view('educational_projects.show')->with([
+            'educational_project' => $educational_project,
+        ]);
+        
+    }
 }

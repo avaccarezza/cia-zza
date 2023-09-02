@@ -24,9 +24,9 @@
                                 </div>
                             </a>
                         @endforeach
+                        </div>
                     </div>
                 </div>
-            </div>
 
                 <h5 class="card-title">{{ $artistic_project->title}}</h5>
                 <p class="card-text">{{ $artistic_project->description}}</p>

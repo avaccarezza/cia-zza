@@ -11,5 +11,11 @@ class ArtisticProjectController extends Controller
         $artistic_projects = ArtisticProject::orderBy('created_at', 'desc')->get();
         return view('artistic_projects.index', compact('artistic_projects'));
     }
-   
+    public function show(ArtisticProject $artistic_project)
+    {
+        return view('artistic_projects.show')->with([
+            'artistic_project' => $artistic_project,
+        ]);
+        
+    }
 }

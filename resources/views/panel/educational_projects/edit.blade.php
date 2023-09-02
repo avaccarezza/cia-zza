@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                     <form
-                    method="POST" action="{{ route('educational.update', ['educational_project' => $educational_project->id]) }}" enctype="multipart/form-data">
+                    method="POST" action="{{ route('educational_projects.update', ['educational_project' => $educational_project->id]) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                         
@@ -28,12 +28,38 @@
                             </div>
                         </div>                      
                         <div class="row mb-3">
-                            <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('messages.Description') }}</label>
+                            <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('Mini descripción') }}</label>
                         
                             <div class="col-md-6">
                                 <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description" required autocomplete="description" autofocus>{{ old('description') ?? $educational_project->description }}</textarea>
                         
                                 @error('description')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="big_description" class="col-md-4 col-form-label text-md-end">{{ __('messages.Description') }}</label>
+                        
+                            <div class="col-md-6">
+                                <textarea id="big_description" class="form-control @error('big_description') is-invalid @enderror" name="big_description" required autocomplete="big_description" autofocus>{{ old('big_description') ?? $educational_project->big_description }}</textarea>
+                        
+                                @error('big_description')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="link_video" class="col-md-4 col-form-label text-md-end">{{ __('Link Video') }}</label>
+                        
+                            <div class="col-md-6">
+                                <textarea id="link_video" class="form-control @error('link_video') is-invalid @enderror" name="link_video" required autocomplete="link_video" autofocus>{{ old('link_video') ?? $educational_project->link_video }}</textarea>
+                        
+                                @error('link_video')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

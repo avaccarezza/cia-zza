@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,11 +19,17 @@ Route::get('/', function () {
 //Languages
 Route::get('/change-language/{locale}', 'LanguageController@changeLanguage')->name('changeLanguage');
 //Contacts
-Route::get('contact', 'ContactFormController@form')->name('contact.form');
+Route::get('/contact', 'ContactController@showForm')->name('contact.form');
+Route::post('/contact', 'ContactController@sendEmail')->name('contact.sendEmail');
+
 Route::post('send-form', 'ContactFormController@send')->name('contact.send');
 //Projects
 Route::get('artistic_projects','App\Http\Controllers\ArtisticProjectController@index')->name('artistic_projects.index');
+Route::get('artistic_projects/{artistic_project}', 'App\Http\Controllers\ArtisticProjectController@show')->name('artistic_projects.show');
+
 Route::get('educational_projects','App\Http\Controllers\EducationalProjectController@index')->name('educational_projects.index');
+Route::get('educational_projects/{educational_project}', 'App\Http\Controllers\EducationalProjectController@show')->name('educational_projects.show');
+
 
 //Auth
 Auth::routes(['register' => false]);

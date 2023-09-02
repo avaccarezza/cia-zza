@@ -26,6 +26,8 @@ class ArtisticProjectRequest extends FormRequest
         return [
             'title' => ['required', 'max:50'],
             'description' =>['required', 'max:255'],
+            'big_description' =>['required', 'max:1500'],
+            'link_video' =>['nullable', 'max:255'],
             'image' => ['nullable', 'image'],          
         ];
     }

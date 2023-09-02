@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ArtisticProject extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'description'];
+    protected $fillable = ['title', 'description','big_description','link_video'];
     protected $with = ['images'];
 
     public function images()

@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
+            $table->string('big_description');
+            $table->string('link_video');
             $table->timestamps();
         });
     }

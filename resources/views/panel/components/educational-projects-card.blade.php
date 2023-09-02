@@ -1,5 +1,5 @@
 <div class="text-center">
-    <a href="{{ route('educational_projects.create') }}" class="btn btn-dark w-50">Nuevo proyecto artístico</a>
+    <a href="{{ route('educational_projects.create') }}" class="btn btn-dark w-50">Nuevo proyecto pedagógico</a>
 </div>
 
 @if ($educational_projects->isEmpty())

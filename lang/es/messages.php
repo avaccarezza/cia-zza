@@ -15,6 +15,7 @@ return[
     "Images" => "Imágenes",
     "Send-email" => "Enviar correo",
     "Subject" => "Asunto",
+    "Message" => "Mensaje",
 
 
 

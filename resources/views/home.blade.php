@@ -4,6 +4,7 @@
 <div class="container fadeInUp"> 
     <!-- Intro -->
     <div class="card mb-5 bg-light">
+     
     <div class="row justify-content-center"> 
     <div class="col-md-6 d-flex align-items-center justify-content-center p-5">
         <p class="text-center">

@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<div class="container fadeInUp"> 
+<div class="container fadeInUp" id="educational-{{$educational_project->id}}"> 
 <div class="card mb-5 bg-light fadeInUp" style="animation-delay:2ms;">
-    <h1 class="text-center pt-5">{{ $educational_project->title}}</h1>
+    <h1 class="text-center pt-5 custom-font">{{ $educational_project->title}}</h1>
 <div class="row align-items-center justify-content-center p-2">
     <div class="col-md-6 mx-auto">
         <p class="text-center">

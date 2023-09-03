@@ -13,22 +13,22 @@
         <div class="row">
             @foreach ($educational_projects as $educational_project)
             <div class="col-md-6 mb-4">
-                <div class="card" style="max-width: 700px; max-height: 200px;">
+                <div class="card" style="max-width: 700px; height: 250px;">
                     <div class="row g-0">
                         <div class="col-md-5">
                             <div id="lightgallery{{ $educational_project->id }}" class="carousel-inner">           
                                 @foreach ($educational_project->images as $image)
                                 <a href="{{ asset($image->path) }}" data-lg-size="1600-2400">
                                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                        <img class="d-block w-100 card-img-top mx-auto" src="{{ asset($image->path) }}" style="max-width:200px;">
+                                        <img class="d-block w-100 card-img-top mx-auto" src="{{ asset($image->path) }}" style="max-width:250px;">
                                     </div>
                                 </a>
                                 @endforeach   
                             </div>         
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-7" id="educational-{{$educational_project->id}}">
                             <div class="card-body">
-                                <h4 class="card-title text-center"><strong>{{ $educational_project->title }}</strong></h4>
+                                <h4 class="card-title text-center custom-font"><strong>{{ $educational_project->title }}</strong></h4>
                                 <p class="card-text text-center"><strong>{{ $educational_project->description }}</strong></p>
                                 {{--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>--}}
                                 <div class="text-center">

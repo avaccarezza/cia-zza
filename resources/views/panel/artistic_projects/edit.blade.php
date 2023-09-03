@@ -57,7 +57,7 @@
                             <label for="link_video" class="col-md-4 col-form-label text-md-end">{{ __('Link Video') }}</label>
                         
                             <div class="col-md-6">
-                                <textarea id="link_video" class="form-control @error('link_video') is-invalid @enderror" name="link_video" required autocomplete="link_video" autofocus>{{ old('link_video') ?? $artistic_project->link_video }}</textarea>
+                                <textarea id="link_video" class="form-control @error('link_video') is-invalid @enderror" name="link_video"  autocomplete="link_video" autofocus>{{ old('link_video') ?? $artistic_project->link_video }}</textarea>
                         
                                 @error('link_video')
                                     <span class="invalid-feedback" role="alert">

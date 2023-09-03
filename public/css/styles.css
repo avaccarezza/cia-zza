@@ -19,7 +19,19 @@ body{text-align:center;}
   100%{transform:translate(0px, 0); opacity: 1;}
 }
 
+#educational-1 .custom-font {
+   color: red;
+}
+#educational-2 .custom-font {
+   color: blue; 
+}
 
+#artistic-1 .custom-font {
+   color: green;
+}
+#artistic-2 .custom-font {
+   color: violet; 
+}
 
 
 

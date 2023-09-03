@@ -17,33 +17,31 @@ class EducationalProjectPanelController extends Controller
     {
         return view('panel.educational_projects.create');
     }
-    public function store( EducationalProjectRequest $request)
-    {
-        $educational_project = EducationalProject::create($request->validated());
+    public function store(EducationalProjectRequest $request)
+{
+    $educational_project = EducationalProject::create($request->validated());
 
-        if ($request->hasFile('images')) 
-        {
-            foreach ($educational_project->images as $image) 
-            {
-                $path = storage_path("app/public/educational_projects/{$image->path}");
-
-                File::delete($path);
-
-                $image->delete();
-            }
+    if ($educational_project->images) {
+        foreach ($educational_project->images as $image) {
+            $path = storage_path("app/public/educational_projects/{$image->path}");
+            File::delete($path);
+            $image->delete();
         }
+    }
 
-        foreach ($request->images as $image) 
-        {
+    if ($request->hasFile('images') && is_array($request->images)) {
+        foreach ($request->images as $image) {
             $educational_project->images()->create([
                 'path' => 'images/' . $image->store('educational_projects', 'images'),
             ]);
         }
-        
-        return redirect()
+    }
+
+    return redirect()
         ->route('panel')
         ->withSuccess("El proyecto pedagógico {$educational_project->title} fue creado");
-    }    
+}
+
 
     public function edit(EducationalProject $educational_project)
     {

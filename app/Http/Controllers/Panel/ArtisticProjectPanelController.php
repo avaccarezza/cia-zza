@@ -17,33 +17,30 @@ class ArtisticProjectPanelController extends Controller
     {
         return view('panel.artistic_projects.create');
     }
-    public function store( ArtisticProjectRequest $request)
+    public function store(ArtisticProjectRequest $request)
     {
         $artistic_project = ArtisticProject::create($request->validated());
-
-        if ($request->hasFile('images')) 
-        {
-            foreach ($artistic_project->images as $image) 
-            {
+    
+        if ($artistic_project->images) {
+            foreach ($artistic_project->images as $image) {
                 $path = storage_path("app/public/artistic_projects/{$image->path}");
-
                 File::delete($path);
-
                 $image->delete();
             }
         }
-
-        foreach ($request->images as $image) 
-        {
-            $artistic_project->images()->create([
-                'path' => 'images/' . $image->store('artistic_projects', 'images'),
-            ]);
+        if ($request->hasFile('images') && is_array($request->images)) {
+            foreach ($request->images as $image) {
+                $artistic_project->images()->create([
+                    'path' => 'images/' . $image->store('artistic_projects', 'images'),
+                ]);
+            }
         }
-        
+    
         return redirect()
-        ->route('panel')
-        ->withSuccess("El proyecto artístico {$artistic_project->title} fue creado");
-    }    
+            ->route('panel')
+            ->withSuccess("El proyecto artístico {$artistic_project->title} fue creado");
+    }
+     
 
     public function edit(ArtisticProject $artistic_project)
     {

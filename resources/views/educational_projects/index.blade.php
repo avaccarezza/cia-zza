@@ -13,7 +13,7 @@
         <div class="row">
             @foreach ($educational_projects as $educational_project)
             <div class="col-md-6 mb-4">
-                <div class="card">
+                <div class="card fadeInUp">
                     <div class="row g-0">
                         <div class="col-md-5">
                             <div id="lightgallery{{ $educational_project->id }}" class="carousel-inner">           

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
-
+use App\Mail\senEmail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,9 +20,8 @@ Route::get('/', function () {
 Route::get('/change-language/{locale}', 'LanguageController@changeLanguage')->name('changeLanguage');
 //Contacts
 Route::get('/contact', 'ContactController@showForm')->name('contact.form');
-Route::post('/contact', 'ContactController@sendEmail')->name('contact.sendEmail');
+Route::post('/sendEmail','ContactController@sendEmail')->name('contact.sendEmail');
 
-Route::post('send-form', 'ContactFormController@send')->name('contact.send');
 //Projects
 Route::get('artistic_projects','App\Http\Controllers\ArtisticProjectController@index')->name('artistic_projects.index');
 Route::get('artistic_projects/{artistic_project}', 'App\Http\Controllers\ArtisticProjectController@show')->name('artistic_projects.show');

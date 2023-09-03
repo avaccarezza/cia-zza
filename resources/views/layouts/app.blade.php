@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ URL::asset('../fontawesome/css/all.min.css') }}">
 
     
-    <link rel="icon" href="ruta/al/tu-icono.png" type="image/png">
+    <link rel="icon" href="{{ asset('img/utilities/logo.ico') }}" type="image/png">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
@@ -33,7 +33,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{asset("img/utilities/logo.png")}}" alt="Logo-ynotangenio">   
+                    <img src="{{ asset("img/utilities/logo.png") }}" alt="Logo-ynotangenio">   
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

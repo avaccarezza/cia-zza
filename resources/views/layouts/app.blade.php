@@ -43,16 +43,16 @@
                     <!-- Center Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item px-3">
-                            <a class="nav-link" href="{{ url('/') }}"><strong>{{ __('Guido') }} </strong></a>
+                            <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ url('/') }}"><strong>{{ __('Guido') }}</strong></a>
+                        </li>                        
+                        <li class="nav-item px-3">
+                            <a class="nav-link {{ Request::url() == route('artistic_projects.index') ? 'active' : '' }}" href="{{ route('artistic_projects.index') }}"><strong>{{ __('messages.Artistic-projects') }}</strong></a>
                         </li>
                         <li class="nav-item px-3">
-                            <a class="nav-link" href="{{ route('artistic_projects.index') }}"><strong>{{ __('messages.Artistic-projects') }}</strong></a>
+                            <a class="nav-link {{ Request::url() == route('educational_projects.index') ? 'active' : '' }}" href="{{ route('educational_projects.index') }}"><strong>{{ __('messages.Educational-projects') }}</strong></a>
                         </li>
                         <li class="nav-item px-3">
-                            <a class="nav-link" href="{{ route('educational_projects.index') }}"><strong>{{ __('messages.Educational-projects') }}</strong></a>
-                        </li>
-                        <li class="nav-item px-3">
-                            <a class="nav-link" href="{{ route('contact.form') }}"><strong>{{ __('messages.Contact') }}</strong></a>
+                            <a class="nav-link {{ Request::url() == route('contact.form') ? 'active' : '' }}" href="{{ route('contact.form') }}"><strong>{{ __('messages.Contact') }}</strong></a>
                         </li>
                     </ul>
 

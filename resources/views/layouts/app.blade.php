@@ -30,7 +30,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top" style="height: 100px;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="{{ asset("img/utilities/logo.png") }}" alt="Logo-ynotangenio">   
@@ -41,7 +41,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Center Of Navbar -->
-                    <ul class="navbar-nav mx-auto">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item px-3">
                             <a class="nav-link" href="{{ url('/') }}"><strong>{{ __('Guido') }} </strong></a>
                         </li>

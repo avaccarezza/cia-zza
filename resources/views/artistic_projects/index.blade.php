@@ -13,7 +13,7 @@
         <div class="row">
             @foreach ($artistic_projects as $artistic_project)
             <div class="col-md-6 mb-4">
-                <div class="card" style="max-width: 700px; height: 250px;">
+                <div class="card fadeInUp" style="max-width: 700px; height: 250px; animation-delay:2ms;">
                     <div class="row g-0">
                         <div class="col-md-5">
                             <div id="lightgallery{{ $artistic_project->id }}" class="carousel-inner">           

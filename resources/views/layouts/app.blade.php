@@ -30,17 +30,17 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top" style="height: 100px;">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top" style="min-height: 100px;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="{{ asset("img/utilities/logo.png") }}" alt="Logo-ynotangenio">   
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <!-- Center Of Navbar -->
+                    
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item px-3">
                             <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ url('/') }}"><strong>{{ __('Guido') }}</strong></a>
@@ -65,9 +65,9 @@
                                 <option value="fr" {{ App::getLocale() === 'fr' ? 'selected' : '' }}>Français</option>
                                 <option value="en" {{ App::getLocale() === 'en' ? 'selected' : '' }}>English</option>
                             </select>
-                        </li>-->
+                        </li>
 
-                    </ul>
+                    </ul>-->
                 </div>
             </div>
         </nav>
@@ -78,45 +78,43 @@
         <footer class="mt-auto">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="{{ asset("img/utilities/logo.png") }}" alt="Logo-ynotangenio">   
+                    <a class="navbar-brand d-none d-sm-block" href="{{ url('/') }}">
+                        <img src="{{ asset("img/utilities/logo.png") }}" alt="Logo-ynotangenio">
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-    
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Center Of Navbar -->
-                        <ul class="navbar-nav mx-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('https://www.facebook.com/ynotangenio/') }}" target="_blank"><img src="{{ asset("img/utilities/facebook.png") }}" alt=""></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('https://www.instagram.com/guido.zza/') }}" target="_blank"><img src="{{ asset("img/utilities/instagram.png") }}" alt=""></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('https://vimeo.com/user16868668') }}" target="_blank"><img src="{{ asset("img/utilities/vimeo.png") }}" alt=""></a>
-                            </li>
-                        </ul>
+                    
+                  
+                    <ul class="nav mx-auto justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('https://www.facebook.com/ynotangenio/') }}" target="_blank"><img src="{{ asset("img/utilities/facebook.png") }}" alt=""></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('https://www.instagram.com/guido.zza/') }}" target="_blank"><img src="{{ asset("img/utilities/instagram.png") }}" alt=""></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('https://vimeo.com/user16868668') }}" target="_blank"><img src="{{ asset("img/utilities/vimeo.png") }}" alt=""></a>
+                        </li>    
+                    </ul>
+                    
+                   
                         
                         <!-- Right Side Of Navbar -->
-                       <ul class="navbar-nav ms-auto">   
+                       <ul class="nav justify-content-center align-items-center" >   
                             
                         <!-- Authentication Links -->
                          @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Admin') }}</a>
+                                <li class="nav-item" >
+                                    <a class="nav-link text-dark" href="{{ route('login') }}">{{ __('Admin') }}</a>
                                 </li>
                             @endif 
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item text-dark" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -129,11 +127,11 @@
                             </li>
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('panel') }}">{{ __('Panel') }}</a>
+                                <a class="nav-link text-dark" href="{{ route('panel') }}">{{ __('Panel') }}</a>
                             </li>
                         @endguest
                         </ul>
-                    </div>
+                    
                 </div>
             </nav>
         </footer>

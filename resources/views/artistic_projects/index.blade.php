@@ -13,14 +13,14 @@
         <div class="row">
             @foreach ($artistic_projects as $artistic_project)
             <div class="col-md-6 mb-4">
-                <div class="card fadeInUp" style="max-width: 700px; height: 250px; animation-delay:2ms;">
+                <div class="card">
                     <div class="row g-0">
                         <div class="col-md-5">
                             <div id="lightgallery{{ $artistic_project->id }}" class="carousel-inner">           
                                 @foreach ($artistic_project->images as $image)
                                 <a href="{{ asset($image->path) }}" data-lg-size="1600-2400">
                                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                        <img class="d-block w-100 card-img-top mx-auto" src="{{ asset($image->path) }}" style="max-width:250px;">
+                                        <img class="d-block w-100 card-img-top mx-auto img-fluid" src="{{ asset($image->path) }}" alt="{{ $artistic_project->title }}">
                                     </div>
                                 </a>
                                 @endforeach   

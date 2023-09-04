@@ -21,11 +21,13 @@
                 </p>
             </div>
         </div>
+        
     </div>
+    <div id="guido-section"></div>
     <!-- Guido -->
-    <div class="card mb-5 bg-light fadeInUp" style="animation-delay:2ms;">
+    <div  class="card mb-5 bg-light fadeInUp py-2 px-5" style="animation-delay:2ms;">
         <h1 class="text-center py-3">GUIDO VACCAREZZA</h1>
-        <div class="row align-items-center justify-content-center p-5">
+        <div class="row align-items-center justify-content-center ">
             <div class="col-md-6 mx-auto">
                 <p class="text-center">
                     <img class="img-fluid rounded" src="{{ asset('img/guido/guido2.png') }}" alt="guido-2">

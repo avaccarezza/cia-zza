@@ -43,7 +43,8 @@
                     
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item px-3">
-                            <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ url('/') }}"><strong>{{ __('Guido') }}</strong></a>
+                            <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{url('/')}}#guido-section"><strong>{{ __('Guido') }}</strong></a>
+
                         </li>                        
                         <li class="nav-item px-3">
                             <a class="nav-link {{ Request::url() == route('artistic_projects.index') ? 'active' : '' }}" href="{{ route('artistic_projects.index') }}"><strong>{{ __('messages.Artistic-projects') }}</strong></a>
@@ -94,9 +95,7 @@
                             <a class="nav-link" href="{{ url('https://vimeo.com/user16868668') }}" target="_blank"><img src="{{ asset("img/utilities/vimeo.png") }}" alt=""></a>
                         </li>    
                     </ul>
-                    
-                   
-                        
+                
                         <!-- Right Side Of Navbar -->
                        <ul class="nav justify-content-center align-items-center" >   
                             
@@ -109,12 +108,11 @@
                             @endif 
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-dark d-none d-sm-block" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item text-dark" href="{{ route('logout') }}"
+                                    <a class="dropdown-item text-dark d-none d-sm-block" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -125,13 +123,11 @@
                                     </form>
                                 </div>
                             </li>
-                            
                             <li class="nav-item">
-                                <a class="nav-link text-dark" href="{{ route('panel') }}">{{ __('Panel') }}</a>
+                                <a class="nav-link text-dark d-none d-sm-block" href="{{ route('panel') }}">{{ __('Panel') }}</a>
                             </li>
                         @endguest
                         </ul>
-                    
                 </div>
             </nav>
         </footer>

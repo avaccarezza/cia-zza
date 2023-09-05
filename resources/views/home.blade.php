@@ -21,19 +21,20 @@
                 </p>
             </div>
         </div>
-        
+        <div id="guido-section"></div>
     </div>
-    <div id="guido-section"></div>
+
     <!-- Guido -->
-    <div  class="card mb-5 bg-light fadeInUp py-2 px-5" style="animation-delay:2ms;">
-        <h1 class="text-center py-3">GUIDO VACCAREZZA</h1>
+    <div  class="card mb-5 bg-light fadeInUp " style="animation-delay:2ms;">
         <div class="row align-items-center justify-content-center ">
-            <div class="col-md-6 mx-auto">
+            
+            <div class="col-md-6 mt-4">
                 <p class="text-center">
-                    <img class="img-fluid rounded" src="{{ asset('img/guido/guido2.png') }}" alt="guido-2">
+                    <img class="img-fluid rounded img-mobile" src="{{ asset('img/guido/guido2.png') }}" alt="guido-2">
                 </p>
             </div>
-            <div class="col-md-6 ">
+            <div class="col-md-6 px-5">
+                <h1 class="text-center py-3">GUIDO VACCAREZZA</h1>
                 Un simple terrícola con infinidad de contradicciones, gracias a las cuales se animó a saltar al vacío de lo que significa la escena.
 <br>
                 Estructuralmente malabarista, meticuloso con el juego de la gravedad pero por sobre todo autodidacta. Con una relación muy estrecha en cuanto al movimiento habiendo cruzado camino con varias técnicas de danza se centró en la mezcla de la danza contemporánea, la composición instantánea y el butoh.              

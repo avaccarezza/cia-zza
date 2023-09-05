@@ -43,8 +43,7 @@
                     
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item px-3">
-                            <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{url('/')}}#guido-section"><strong>{{ __('Guido') }}</strong></a>
-
+                            <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{url('/')}}#guido-section" ><strong>{{ __('Guido') }}</strong></a>
                         </li>                        
                         <li class="nav-item px-3">
                             <a class="nav-link {{ Request::url() == route('artistic_projects.index') ? 'active' : '' }}" href="{{ route('artistic_projects.index') }}"><strong>{{ __('messages.Artistic-projects') }}</strong></a>

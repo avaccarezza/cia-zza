@@ -1,4 +1,4 @@
-<h1 class="text-center pt-5">{{ __('messages.Contact')}}</h1>
+<h1 class="text-center pt-5">{{ __('Contact')}}</h1>
 <form action="{{ route('contact.send') }}" method="POST">
     @csrf
     <div class="row justify-content-center">

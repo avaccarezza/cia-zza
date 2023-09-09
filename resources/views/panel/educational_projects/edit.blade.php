@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('messages.Edit-educational-project') }}</div>
+                <div class="card-header">{{ __('Edit educational project') }}</div>
 
                 <div class="card-body">
                     <form
@@ -15,7 +15,7 @@
                         
                         <input type="hidden" name="id" >
                         <div class="row mb-3">
-                            <label for="title" class="col-md-4 col-form-label text-md-end">{{ __('messages.Title') }}</label>
+                            <label for="title" class="col-md-4 col-form-label text-md-end">{{ __('Title') }}</label>
 
                             <div class="col-md-6">
                                 <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') ?? $educational_project->title }}" required autocomplete="title" autofocus>
@@ -28,8 +28,7 @@
                             </div>
                         </div>                      
                         <div class="row mb-3">
-                            <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('Mini descripción') }}</label>
-                        
+                            <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('Mini descripción') }}</label>                
                             <div class="col-md-6">
                                 <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description" required autocomplete="description" autofocus>{{ old('description') ?? $educational_project->description }}</textarea>
                         
@@ -41,7 +40,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="big_description" class="col-md-4 col-form-label text-md-end">{{ __('messages.Description') }}</label>
+                            <label for="big_description" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
                         
                             <div class="col-md-6">
                                 <textarea id="big_description" class="form-control @error('big_description') is-invalid @enderror" name="big_description" required autocomplete="big_description" autofocus>{{ old('big_description') ?? $educational_project->big_description }}</textarea>
@@ -67,7 +66,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="image" class="col-md-4 col-form-label text-md-end">{{ __('messages.Images') }}</label>
+                            <label for="image" class="col-md-4 col-form-label text-md-end">{{ __('Images') }}</label>
                         
                             <div class="col-md-6">
                                 <div class="custom-file">
@@ -83,7 +82,7 @@
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-dark">
-                                    {{ __('messages.Edit') }}
+                                    {{ __('Edit') }}
                                 </button>
                             </div>
                         </div>

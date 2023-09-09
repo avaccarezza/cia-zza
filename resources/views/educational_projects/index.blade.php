@@ -3,7 +3,7 @@
 @section('content')
 <div class="container py-4">
     <div class="container">
-        <h1 class="text-center pb-4">{{ __('messages.Educational-projects') }}</h1> 
+        <h1 class="text-center pb-4">{{ __('Educational projects') }}</h1> 
         @if ($educational_projects->isEmpty())
         <div class="alert alert-warning mt-4">
             La lista de proyectos pedagógicos está vacía.
@@ -27,12 +27,10 @@
                                 @endforeach
                             </div>
                             <button class="carousel-control-prev" data-bs-target="#carousel{{ $educational_project->id }}" role="button" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
+                                <i class="fa-solid fa-arrow-left"></i> 
                             </button>
                             <button class="carousel-control-next" data-bs-target="#carousel{{ $educational_project->id }}" role="button" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
+                                <i class="fa-solid fa-arrow-right"></i> 
                             </button>
                         </div>
                     </div>

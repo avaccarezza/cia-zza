@@ -18,12 +18,10 @@
             </div>
             
             <button class="carousel-control-prev" data-bs-target="#carousel{{ $educational_project->id }}" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
+                <i class="fa-solid fa-arrow-left"></i> 
             </button>
             <button class="carousel-control-next" data-bs-target="#carousel{{ $educational_project->id }}" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
+                <i class="fa-solid fa-arrow-right"></i> 
             </button>
             
         </p>

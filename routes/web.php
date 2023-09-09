@@ -17,7 +17,8 @@ Route::get('/', function () {
     return view('home');
 });
 //Languages
-Route::get('/change-language/{locale}', 'LanguageController@changeLanguage')->name('changeLanguage');
+Route::get('/set_language/{lang}', ['App\Http\Controllers\Controller', 'set_language'])->name('set_language');
+
 //Contacts
 Route::get('/contact', 'ContactController@showForm')->name('contact.form');
 Route::post('/sendEmail','ContactController@sendEmail')->name('contact.sendEmail');

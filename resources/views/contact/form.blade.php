@@ -10,7 +10,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card ">
-                <div class="card-header">{{ __('messages.Contact') }}</div>
+                <div class="card-header">{{ __('Contact') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('contact.sendEmail') }}">
@@ -40,7 +40,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="subject" class="col-md-4 col-form-label text-md-end">{{ __('messages.Subject') }}</label>
+                            <label for="subject" class="col-md-4 col-form-label text-md-end">{{ __('Subject') }}</label>
 
                             <div class="col-md-6">
                                 <input id="subject" type="text" class="form-control @error('subject') is-invalid @enderror" name="subject" value="{{ old('subject') }}" required autocomplete="subject" autofocus>
@@ -53,7 +53,7 @@
                             </div>
                         </div>                      
                         <div class="row mb-3">
-                            <label for="message" class="col-md-4 col-form-label text-md-end">{{ __('messages.Message') }}</label>
+                            <label for="message" class="col-md-4 col-form-label text-md-end">{{ __('Message') }}</label>
                         
                             <div class="col-md-6">
                                 <textarea id="message" class="form-control @error('message') is-invalid @enderror" name="message" required autocomplete="message" autofocus>{{ old('message') }}</textarea>
@@ -69,7 +69,7 @@
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-dark">
-                                    {{ __('messages.Send-email') }}
+                                    {{ __('Send email') }}
                                 </button>                        
                             </div>
                         </div>

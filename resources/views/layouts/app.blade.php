@@ -12,8 +12,16 @@
     <link rel="stylesheet" href="{{ URL::asset('../css/lightgallery.css') }}">
 
     <link rel="stylesheet" href="{{ URL::asset('../fontawesome/css/all.min.css') }}">
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
 
     
+
+
     <link rel="icon" href="{{ asset('img/utilities/logo.ico') }}" type="image/png">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -23,6 +31,12 @@
     <link href="{{ URL::asset('../fonts/lg.ttf') }}}}" rel="stylesheet">
 
 
+
+
+
+
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"></script>
     <!-- Scripts -->
     <script src="{{ asset('../js/lightgallery.umd.js') }} "></script>
     <script src="{{ asset('../js/scripts.js') }}"></script>
@@ -39,39 +53,27 @@
                     <span class="navbar-toggler-icon"></span>
                   </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <!-- Center Of Navbar -->
-                    
-                    <ul class="navbar-nav ms-auto">
+                
+                    <ul class="navbar-nav ms-auto"> 
                         <li class="nav-item px-3">
                             <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{url('/')}}#guido-section" ><strong>{{ __('Guido') }}</strong></a>
                         </li>                        
                         <li class="nav-item px-3">
-                            <a class="nav-link {{ Request::url() == route('artistic_projects.index') ? 'active' : '' }}" href="{{ route('artistic_projects.index') }}"><strong>{{ __('messages.Artistic-projects') }}</strong></a>
+                            <a class="nav-link {{ Request::url() == route('artistic_projects.index') ? 'active' : '' }}" href="{{ route('artistic_projects.index') }}"><strong>{{ __('Artistic projects') }}</strong></a>
                         </li>
                         <li class="nav-item px-3">
-                            <a class="nav-link {{ Request::url() == route('educational_projects.index') ? 'active' : '' }}" href="{{ route('educational_projects.index') }}"><strong>{{ __('messages.Educational-projects') }}</strong></a>
+                            <a class="nav-link {{ Request::url() == route('educational_projects.index') ? 'active' : '' }}" href="{{ route('educational_projects.index') }}"><strong>{{ __('Educational projects') }}</strong></a>
                         </li>
                         <li class="nav-item px-3">
-                            <a class="nav-link {{ Request::url() == route('contact.form') ? 'active' : '' }}" href="{{ route('contact.form') }}"><strong>{{ __('messages.Contact') }}</strong></a>
+                            <a class="nav-link {{ Request::url() == route('contact.form') ? 'active' : '' }}" href="{{ route('contact.form') }}"><strong>{{ __('Contact') }}</strong></a>
                         </li>
-                    </ul>
-
-                    <!-- Right Side Of Navbar 
-                   <ul class="navbar-nav ms-auto">   
-                        <li class="nav-item">                    
-                           {{-- <label for="language">Seleccionar idioma:</label>--}}
-                            <select class="form-control mr-2" name="language" id="language" onchange="this.form.submit()" style="cursor: pointer;">
-                                <option value="es" {{ App::getLocale() === 'es' ? 'selected' : '' }}>Español</option>
-                                <option value="fr" {{ App::getLocale() === 'fr' ? 'selected' : '' }}>Français</option>
-                                <option value="en" {{ App::getLocale() === 'en' ? 'selected' : '' }}>English</option>
-                            </select>
-                        </li>
-
-                    </ul>-->
+                        @include('components.select-lang')
+                    </ul> 
+                    
+                    
                 </div>
             </div>
         </nav>
-
         <main class="d-flex flex-column min-vh-100">
             @yield('content')
         </main>

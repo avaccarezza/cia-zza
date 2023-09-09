@@ -11,7 +11,7 @@
                 @foreach ($artistic_project->images as $image)
                 <a href="{{ asset($image->path) }}" data-lg-size="1600-2400">
                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                        <img class="d-block w-100 card-img-top mx-auto rounded" src="{{ asset($image->path) }}" style="max-width:500px;">
+                        <img class="d-block w-100 card-img-top mx-auto rounded" src="{{ asset($image->path) }}" >
                     </div>         
                 </a>
                 @endforeach  
@@ -20,10 +20,11 @@
             <button class="carousel-control-prev" data-bs-target="#carousel{{ $artistic_project->id }}" role="button" data-bs-slide="prev">
                 <i class="fa-solid fa-arrow-left"></i> 
             </button>
+           
             <button class="carousel-control-next" data-bs-target="#carousel{{ $artistic_project->id }}" role="button" data-bs-slide="next">
                 <i class="fa-solid fa-arrow-right"></i> 
             </button>
-            
+           
         </p>
     </div>
 </div>

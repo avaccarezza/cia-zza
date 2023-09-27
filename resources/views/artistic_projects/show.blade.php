@@ -31,7 +31,7 @@
 
     <div class="col-md-6 ">
         <p class="p-3 text-center">
-            {!! nl2br(e($artistic_project->big_description)) !!}
+                {!! nl2br(e($artistic_project->big_description)) !!}
         </p>  
         @if(!empty($artistic_project->link_video))
         <div class="text-center pb-3">

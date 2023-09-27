@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
-use App\Mail\senEmail;
+use App\Mail\sendEmail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

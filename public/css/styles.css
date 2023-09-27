@@ -1,15 +1,17 @@
 footer nav {
    height: 150px;
 }
-
-body{
-   /*background-image: url('img/utilities/fondo.png') !important; 
-   background-size: cover;  
-   background-repeat: no-repeat; 
-   background-position: center center; */
-   background-image: url("../img/utilities/fondo.png") !important;
-   /*background-color: aqua !important;*/
+p {
+   margin-bottom: 10px;
 }
+body{
+   font-family: Arial, sans-serif;
+   line-height: 1.6;
+   margin: 20px;
+   background-image: url("../img/utilities/fondo.png") !important;
+}
+
+
 
 body{text-align:center;}
 .box{width:200px; height:50px; background: #ccc; margin: 0 auto; text-align:center; line-height:50px;}

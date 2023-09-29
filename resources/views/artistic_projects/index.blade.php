@@ -21,7 +21,7 @@
                                 @foreach ($artistic_project->images as $image)
                                 <a href="{{ asset($image->path) }}" data-lg-size="1600-2400">
                                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                        <img class="d-block w-100 card-img-top mx-auto img-fluid" src="{{ asset($image->path) }}" alt="{{ $artistic_project->title }}">
+                                        <img class="d-block w-100 card-img-top mx-auto img-fluid" src="{{ asset($image->path) }}" alt="{{ $artistic_project->title }}" >
                                     </div>
                                 </a>
                                 @endforeach

@@ -35,11 +35,38 @@ body{text-align:center;}
    color: violet; 
 }
 
+/* Estilo para la galería */
+.carousel-inner {
+   background-color: black;
+}
+.custom-gallery {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center; /* Centrar verticalmente los elementos */
+   height: 500px;
+   margin-top: 100px;
+   padding: 10px; /* Margen predeterminado */
+   
+}
 
+@media (max-width: 768px) {
+   .custom-gallery {
+       padding: 0; /* Elimina el padding en pantallas móviles */
+   }
+}
 
+.custom-img {
+   max-width: 100%;
+   max-height: 500px;
+   overflow: hidden;
+   object-fit: cover;
+}
 
-
-
+.vertical-center {
+   display: flex;
+   align-items: center; /* Centra verticalmente los elementos en el contenedor */
+}
 
 
 

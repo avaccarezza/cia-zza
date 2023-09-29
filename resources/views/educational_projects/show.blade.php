@@ -1,47 +1,89 @@
 @extends('layouts.app')
 @section('content')
-<div class="container fadeInUp" id="educational-{{$educational_project->id}}"> 
-<div class="card mb-5 bg-light fadeInUp" style="animation-delay:2ms;">
-    <h1 class="text-center pt-5 custom-font">{{ $educational_project->title}}</h1>
-<div class="row align-items-center justify-content-center p-2">
-    <div class="col-md-6 mx-auto" style="height: 600px; overflow: hidden; display: flex; align-items: center;">
-        <p class="text-center">
-            <div id="carousel{{$educational_project->id}}" class="carousel slide">
-                <div id="lightgallery{{ $educational_project->id }}" class="carousel-inner">           
-                @foreach ($educational_project->images as $image)
-                <a href="{{ asset($image->path) }}" data-lg-size="1600-2400">
-                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                        <img class="d-block w-100 card-img-top mx-auto rounded" src="{{ asset($image->path) }}" >
-                    </div>         
-                </a>
-                @endforeach  
-            </div>
-            
-            <button class="carousel-control-prev" data-bs-target="#carousel{{ $educational_project->id }}" role="button" data-bs-slide="prev">
-                <i class="fa-solid fa-arrow-left"></i> 
-            </button>
-            <button class="carousel-control-next" data-bs-target="#carousel{{ $educational_project->id }}" role="button" data-bs-slide="next">
-                <i class="fa-solid fa-arrow-right"></i> 
-            </button>
-            
-        </p>
-    </div>
-</div>
 
+<!-- Carousel wrapper -->
+<div class="container fadeInUp pt-5"> 
+    <div class="card mb-5 bg-light fadeInUp" style="animation-delay:2ms;">
+        <div class="row vertical-center">
+            <div class="col-md-6">
+        <a href="{{ url()->previous() }}" class="btn btn-dark">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        
+        
+        <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+            <div id="projects_image">
+            <div class="carousel-indicators">
+                @php
+                    $maxIndicators = 10; // Cambia esto al número máximo deseado
+                @endphp
+                @foreach ($educational_project->images as $image)
+                @if ($loop->index < $maxIndicators)
+                <button
+                    type="button"
+                    data-mdb-target="#carouselBasicExample"
+                    data-mdb-slide-to="{{$loop->index}}"
+                    class="{{ $loop->first ? 'active' : '' }}"
+                    aria-current="true"
+                    aria-label="Slide {{$loop->index}}"
+                ></button>
+                @endif
+                @endforeach
+            </div>
+
+            <!-- Inner -->
+            <div id="lightgallery" class="carousel-inner custom-gallery">
+            <!-- Single item -->
+            @foreach ($educational_project->images as $image)
+                <a href="{{ asset($image->path) }}" data-lg-size="1600-2400">
+                    <img class="carousel-item {{ $loop->first ? 'active' : '' }}" src="{{ asset($image->path) }}" class="d-block w-100 custom-img" alt="{{ $educational_project->title }}"/>
+                </a>
+            @endforeach
+            </div>
+        
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="prev">
+            <i class="fa-solid fa-arrow-left"></i> 
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="next">
+                <i class="fa-solid fa-arrow-right"></i> 
+            <span class="visually-hidden">Next</span>
+            </button>
+        </div> 
+        
+            <iframe id="projects_video" class="custom-gallery"  width="100%" height="500" src="{{ $educational_project->link_video }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" style="background-color: black;"></iframe>
+        
+    </div>
+        
+
+       
+
+    </div>
     <div class="col-md-6 ">
+        <h1 class="text-center pt-5 custom-font">{{ $educational_project->title}}</h1>
         <p class="p-3 text-left">
-            {!! nl2br(e($educational_project->big_description)) !!}
+                {!! nl2br(e($educational_project->big_description)) !!}
         </p>  
+
         @if(!empty($educational_project->link_video))
-        <div class="text-center pb-3">
-            <a  href="{{ $educational_project->link_video }}" class="btn btn-dark" title="Ver video">VER VIDEO</a>
+        <div class="text-center py-3">
+            <a  id="showVideo" class="btn btn-dark" title="Ver video">
+                <i class="fas fa-video"></i>
+            </a>
+            <a  id="showImage" class="btn btn-dark" title="Ver imágenes">
+                <i class="fas fa-image"></i>
+            </a>
         </div>
-        @endif
+        @endif     
+
     </div>
 </div>
 </div>
-</div>
+  
+
+
 <script type="text/javascript">
-    lightGallery(document.getElementById('lightgallery{{ $educational_project->id }}'));   
+    lightGallery(document.getElementById('lightgallery'));   
 </script>
 @endsection

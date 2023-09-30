@@ -6,9 +6,9 @@
     <div class="card mb-5 bg-light fadeInUp" style="animation-delay:2ms;">
         <div class="row vertical-center">
             <div class="col-md-6">
-        <a href="{{ url()->previous() }}" class="btn btn-dark">
-            <i class="fas fa-arrow-left"></i>
-        </a>
+                <a href="{{ url()->previous() }}" class="btn btn-dark m-2">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
         
         
         <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">

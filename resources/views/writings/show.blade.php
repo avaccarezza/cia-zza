@@ -10,7 +10,7 @@
                     <i class="fas fa-arrow-left"></i>
                 </a>
 
-                @if(!empty($artistic_project->link_video))
+                @if(!empty($educational_project->link_video))
                     <a  id="showVideo" class="btn btn-dark my-2 " title="Ver video">
                         <i class="fas fa-video"></i>
                     </a>
@@ -19,8 +19,8 @@
                     </a>
                 @endif     
 
-                @if(!empty($artistic_project->link_instagram))  
-                <a  class="btn btn-dark m-2" href="{{ $artistic_project->link_instagram }}"
+                @if(!empty($educational_project->link_instagram))  
+                <a  class="btn btn-dark m-2" href="{{ $educational_project->link_instagram }}"
                 target="_blank">
                     <i class="fab fa-instagram"></i>
                 </a>
@@ -35,7 +35,7 @@
                 @php
                     $maxIndicators = 10; // Cambia esto al número máximo deseado
                 @endphp
-                @foreach ($artistic_project->images as $image)
+                @foreach ($educational_project->images as $image)
                 @if ($loop->index < $maxIndicators)
                 <button
                     type="button"
@@ -52,9 +52,9 @@
             <!-- Inner -->
             <div id="lightgallery" class="carousel-inner custom-gallery">
             <!-- Single item -->
-            @foreach ($artistic_project->images as $image)
+            @foreach ($educational_project->images as $image)
                 <a href="{{ asset($image->path) }}" data-lg-size="1600-2400">
-                    <img class="carousel-item {{ $loop->first ? 'active' : '' }} custom-img" src="{{ asset($image->path) }}" class="d-block" alt="{{ $artistic_project->title }}"/>
+                    <img class="carousel-item {{ $loop->first ? 'active' : '' }} custom-img" src="{{ asset($image->path) }}" class="d-block" alt="{{ $educational_project->title }}"/>
                 </a>
             @endforeach
             </div>
@@ -69,14 +69,14 @@
             <span class="visually-hidden">Next</span>
             </button>
         </div>  
-            <iframe id="projects_video" class="custom-gallery"  width="100%" height="500" src="{{ $artistic_project->link_video }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" style="background-color: black;"></iframe> 
+            <iframe id="projects_video" class="custom-gallery"  width="100%" height="500" src="{{ $educational_project->link_video }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" style="background-color: black;"></iframe> 
     </div>
     
     </div>
     <div class="col-md-6 ">
-        <h1 class="text-center pt-5 custom-font">{{ $artistic_project->title}}</h1>
+        <h1 class="text-center pt-5 custom-font">{{ $educational_project->title}}</h1>
         <p class="p-3 text-left">
-                {!! nl2br(e($artistic_project->big_description)) !!}
+                {!! nl2br(e($educational_project->big_description)) !!}
         </p>  
     </div>
 </div>

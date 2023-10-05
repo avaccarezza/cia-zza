@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use App\Mail\sendEmail;
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +29,11 @@ Route::get('artistic_projects/{artistic_project}', 'App\Http\Controllers\Artisti
 
 Route::get('educational_projects','App\Http\Controllers\EducationalProjectController@index')->name('educational_projects.index');
 Route::get('educational_projects/{educational_project}', 'App\Http\Controllers\EducationalProjectController@show')->name('educational_projects.show');
+
+//Writings
+Route::get('writings','App\Http\Controllers\WritingController@index')->name('writings.index');
+Route::get('writings/{writing}', 'App\Http\Controllers\WritingController@show')->name('writings.show');
+
 
 
 //Auth

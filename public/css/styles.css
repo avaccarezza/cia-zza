@@ -57,7 +57,7 @@ body{text-align:center;}
 }
 
 .custom-img {
-   max-width: 100%;
+   max-width: 500px;
    max-height: 500px;
    overflow: hidden;
    object-fit: cover;
@@ -68,8 +68,31 @@ body{text-align:center;}
    align-items: center; /* Centra verticalmente los elementos en el contenedor */
 }
 
+.custom-link {
+   text-decoration: none; 
+   color: inherit; 
+}
 
+.projects-p{
+   display: flex;
+   flex-direction: column; 
+   align-items: center; 
+   justify-content: center;
+   height: 180px;
+}
 
+.projects-img-index{
+  
+   background-color: black;
+   
+}
+
+.custom-img-index {
+   height: 250px;
+   max-width: 250px;
+   overflow: hidden;
+   object-fit: cover;
+}
 
 
 

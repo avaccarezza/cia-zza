@@ -67,6 +67,10 @@
                                 href="{{ route('educational_projects.index') }}"><strong>{{ __('Educational projects') }}</strong></a>
                         </li>
                         <li class="nav-item px-3">
+                            <a class="nav-link {{ Request::url() == route('writings.index') ? 'active' : '' }}"
+                                href="{{ route('writings.index') }}"><strong>{{ __('Writings') }}</strong></a>
+                        </li>
+                        <li class="nav-item px-3">
                             <a class="nav-link {{ Request::url() == route('contact.form') ? 'active' : '' }}"
                                 href="{{ route('contact.form') }}"><strong>{{ __('Contact') }}</strong></a>
                         </li>
@@ -94,12 +98,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('https://www.facebook.com/ynotangenio/') }}"
                                 target="_blank"><img src="{{ asset('img/utilities/facebook.png') }}"
-                                    alt=""></a>
+                                    alt="">
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('https://www.instagram.com/guido.zza/') }}"
                                 target="_blank"><img src="{{ asset('img/utilities/instagram.png') }}"
-                                    alt=""></a>
+                                    alt="">
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('https://vimeo.com/user16868668') }}" target="_blank"><img

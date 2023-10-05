@@ -77,6 +77,19 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="row mb-3">
+                            <label for="link_instagram" class="col-md-4 col-form-label text-md-end">{{ __('Link Instagram') }}</label>
+                        
+                            <div class="col-md-6">
+                                <textarea id="link_instagram" class="form-control @error('link_instagram') is-invalid @enderror" name="link_instagram"  autocomplete="link_instagram" autofocus>{{ old('link_instagram') }}</textarea>
+                        
+                                @error('link_instagram')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-dark">

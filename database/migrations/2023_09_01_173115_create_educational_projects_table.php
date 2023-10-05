@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('big_description');
             $table->string('link_video')->nullable();
+            $table->string('link_instagram')->nullable();
             $table->timestamps();        
         });
     }

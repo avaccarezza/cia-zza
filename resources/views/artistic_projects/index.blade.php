@@ -13,48 +13,32 @@
         <div class="row">
             @foreach ($artistic_projects as $artistic_project)
             <div class="col-md-6 mb-4">
+                <a class="custom-link" href="{{ route('artistic_projects.show', ['artistic_project' => $artistic_project->id]) }}" >
                 <div class="card fadeInUp">
-                    <div class="row g-0">
-                        <div class="col-md-5" style="height: 250px; overflow: hidden; display: flex; align-items: center;background-color: black;">
-                            <div id="carousel{{$artistic_project->id}}" class="carousel slide">
-                            <div id="lightgallery{{ $artistic_project->id }}" class="carousel-inner">
+                    <div class="row">
+                        <div class="col-md-5 projects-img-index" >
                                 @foreach ($artistic_project->images as $image)
-                                <a href="{{ asset($image->path) }}" data-lg-size="1600-2400">
-                                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                        <img class="d-block w-100 card-img-top mx-auto img-fluid" src="{{ asset($image->path) }}" alt="{{ $artistic_project->title }}" >
-                                    </div>
-                                </a>
-                                @endforeach
-                            </div>
-                            <button class="carousel-control-prev" data-bs-target="#carousel{{ $artistic_project->id }}" role="button" data-bs-slide="prev">
-                                <i class="fa-solid fa-arrow-left"></i>  
-                            </button>
-                            <button class="carousel-control-next" data-bs-target="#carousel{{ $artistic_project->id }}" role="button" data-bs-slide="next">
-                                <i class="fa-solid fa-arrow-right"></i>  
-                            </button>
+                                    @if ($loop->first)
+                                            <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                                <img class="carousel-item {{ $loop->first ? 'active' : '' }} custom-img-index" src="{{ asset($image->path) }}" class="d-block" alt="{{ $artistic_project->title }}"/>
+                                            </div>
+                                    @endif
+                                @endforeach   
                         </div>
-                    </div>
                         <div class="col-md-7" id="artistic-{{$artistic_project->id}}">
                             <div class="card-body">
                                 <h4 class="card-title text-center custom-font"><strong>{{ $artistic_project->title }}</strong></h4>
-                                <p class="card-text text-center"><strong>{{ $artistic_project->description }}</strong></p>
-                                {{--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>--}}
-                                <div class="text-center">
-                                    <a  href="{{ route('artistic_projects.show', ['artistic_project' => $artistic_project->id]) }}" class="btn btn-dark" title="Ver detalle"><i class="fa-solid fa-eye"></i></a>
-                                </div>
+                                <p class="card-text text-center projects-p"><strong>{{ $artistic_project->description }}</strong></p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </a>
             </div>
             @endforeach
         </div>
         @endif
     </div>
-    <script type="text/javascript">
-        @foreach ($artistic_projects as $artistic_project)
-        lightGallery(document.getElementById('lightgallery{{ $artistic_project->id }}'));   
-        @endforeach
-    </script>
+   
 </div>
 @endsection

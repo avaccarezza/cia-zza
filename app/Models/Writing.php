@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Writing extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['title', 'description','big_description','link_video','link_instagram'];
+
+    protected $with = ['images'];
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imageable');
+    }
 }

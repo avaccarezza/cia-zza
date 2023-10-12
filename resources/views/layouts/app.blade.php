@@ -59,8 +59,8 @@
                                 href="{{ url('/') }}#guido-section"><strong>{{ __('Guido') }}</strong></a>
                         </li>
                         <li class="nav-item px-3">
-                            <a class="nav-link {{ Request::url() == route('artistic_projects.index') ? 'active' : '' }}"
-                                href="{{ route('artistic_projects.index') }}"><strong>{{ __('Artistic projects') }}</strong></a>
+                            <a class="nav-link {{ Request::url() == route('stage_projects.index') ? 'active' : '' }}"
+                                href="{{ route('stage_projects.index') }}"><strong>{{ __('Stage projects') }}</strong></a>
                         </li>
                         <li class="nav-item px-3">
                             <a class="nav-link {{ Request::url() == route('educational_projects.index') ? 'active' : '' }}"

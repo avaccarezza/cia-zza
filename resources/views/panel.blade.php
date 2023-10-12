@@ -11,9 +11,9 @@
   <div class="row justify-content-center">
       <div class="col-md-8">  
           <div class="card ">
-              <div class="card-header">{{ __('Artistic projects') }}</div>
+              <div class="card-header">{{ __('Stage projects') }}</div>
               <div class="card-body">  
-                @include('panel.components.artistic-projects-card')                                                     
+                @include('panel.components.stage-projects-card')                                                     
               </div>
           </div>
       </div>

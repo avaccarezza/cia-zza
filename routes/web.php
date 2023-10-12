@@ -24,8 +24,8 @@ Route::get('/contact', 'ContactController@showForm')->name('contact.form');
 Route::post('/sendEmail','ContactController@sendEmail')->name('contact.sendEmail');
 
 //Projects
-Route::get('artistic_projects','App\Http\Controllers\ArtisticProjectController@index')->name('artistic_projects.index');
-Route::get('artistic_projects/{artistic_project}', 'App\Http\Controllers\ArtisticProjectController@show')->name('artistic_projects.show');
+Route::get('stage_projects','App\Http\Controllers\StageProjectController@index')->name('stage_projects.index');
+Route::get('stage_projects/{stage_project}', 'App\Http\Controllers\StageProjectController@show')->name('stage_projects.show');
 
 Route::get('educational_projects','App\Http\Controllers\EducationalProjectController@index')->name('educational_projects.index');
 Route::get('educational_projects/{educational_project}', 'App\Http\Controllers\EducationalProjectController@show')->name('educational_projects.show');

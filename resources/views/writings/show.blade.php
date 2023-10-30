@@ -63,11 +63,11 @@
         <p class="p-3 text-left">
                 {!! nl2br(e($writing->big_description)) !!}
         </p>
-        @if(!empty($writing->link_video))
+        @if(!empty($writing->btn_buy))
         <p class="p-3 text-left">
             Para conseguir tu ejemplar click aquí: 
-            <a class="btn btn-primary mx-3" style="background-color: #55acee;" href="{{ $writing->link_video }}" target="_blank" role="button">
-                <i class="bi bi-cart"></i> Comprar 
+            <a class="btn btn-dark mx-3"  href="{{ $writing->link_video }}" target="_blank" role="button">
+                <i class="fas fa-cart-shopping"></i> Comprar 
             </a>
         </p>
         @endif
@@ -82,6 +82,7 @@
                 ><i class="fab fa-instagram"></i
               ></a>
                 @endif
+             
         </div>  
     </div>
 </div>

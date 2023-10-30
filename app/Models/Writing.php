@@ -9,7 +9,7 @@ class Writing extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title','subtitle', 'description','big_description','link_video','link_instagram'];
+    protected $fillable = ['title','subtitle', 'description','big_description','link_video','link_instagram','btn_buy'];
 
     protected $with = ['images'];
     public function images()

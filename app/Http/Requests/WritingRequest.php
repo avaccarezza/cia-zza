@@ -24,13 +24,14 @@ class WritingRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' =>          ['required', 'max:75'],
-            'subtitle' =>          ['required', 'max:75'],
-            'description' =>    ['required', 'max:255'],
-            'big_description' =>['required', 'max:2000'],
-            'link_video' =>     ['nullable', 'max:255'],
-            'link_instagram' => ['nullable', 'max:255'],
-            'image' =>          ['nullable', 'image'],          
+            'title' =>              ['required', 'max:75'],
+            'subtitle' =>           ['required', 'max:75'],
+            'description' =>        ['required', 'max:255'],
+            'big_description' =>    ['required', 'max:2000'],
+            'link_video' =>         ['nullable', 'max:255'],
+            'link_instagram' =>     ['nullable', 'max:255'],
+            'image' =>              ['nullable', 'image'],
+            'btn_buy' =>            ['boolean'],          
         ];
     }
 

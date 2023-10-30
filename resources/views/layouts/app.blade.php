@@ -40,10 +40,11 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top" style="min-height: 100px;">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top"
+            style="min-height: 100px;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ asset('img/utilities/logo.png') }}" alt="Logo-ynotangenio">
+                    <img src="{{ asset('img/utilities/logo.png') }}" alt="Logo-ynotangenio" height="70">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
@@ -52,7 +53,6 @@
                     <i class="fa-solid fa-bars fa-lg"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item px-3">
                             <a class="nav-link {{ Request::is('/') ? 'active' : '' }}"
@@ -76,13 +76,12 @@
                         </li>
                         <li class="nav-item px-3">
                             @include('components.select-lang')
-                        </lI>
+                        </li>
                     </ul>
-
-
                 </div>
             </div>
         </nav>
+
         <main class="d-flex flex-column min-vh-100">
             @yield('content')
         </main>
@@ -90,21 +89,19 @@
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
                     <a class="navbar-brand d-none d-sm-block" href="{{ url('/') }}">
-                        <img src="{{ asset('img/utilities/logo.png') }}" alt="Logo-ynotangenio">
+                        <img src="{{ asset('img/utilities/logo.png') }}" alt="Logo-ynotangenio" height="70">
                     </a>
 
 
                     <ul class="nav mx-auto justify-content-center">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('https://www.facebook.com/ynotangenio/') }}"
-                                target="_blank"><img src="{{ asset('img/utilities/facebook.png') }}"
-                                    alt="">
+                                target="_blank"><img src="{{ asset('img/utilities/facebook.png') }}" alt="">
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('https://www.instagram.com/guido.zza/') }}"
-                                target="_blank"><img src="{{ asset('img/utilities/instagram.png') }}"
-                                    alt="">
+                                target="_blank"><img src="{{ asset('img/utilities/instagram.png') }}" alt="">
                             </a>
                         </li>
                         <li class="nav-item">

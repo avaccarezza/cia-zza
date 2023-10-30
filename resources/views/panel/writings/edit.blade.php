@@ -26,7 +26,20 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>                      
+                        </div>        
+                        <div class="row mb-3">
+                            <label for="subtitle" class="col-md-4 col-form-label text-md-end">{{ __('Subtitle') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="subtitle" type="text" class="form-control @error('subtitle') is-invalid @enderror" name="title" value="{{ old('subtitle') ?? $writing->subtitle }}" required autocomplete="subtitle" autofocus>
+
+                                @error('subtitle')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>                    
                         <div class="row mb-3">
                             <label for="description" class="col-md-4 col-form-label text-md-end">{{ __('Mini descripción') }}</label>
                         

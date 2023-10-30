@@ -5,9 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('New stage projects') }}</div>
-
+                <div class="card-header">{{ __('New stage project') }}</div>
                 <div class="card-body">
+                   
                     <form method="POST" action="{{ route("stage_projects.store") }}" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="id" >

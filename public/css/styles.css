@@ -11,7 +11,11 @@ body{
    background-image: url("../img/utilities/fondo.png") !important;
 }
 
-
+#presentation{
+   font-family: 'aquiencorresponda', sans-serif;
+   font-size: large;
+   font-weight: bold;
+}
 
 body{text-align:center;}
 .box{width:200px; height:50px; background: #ccc; margin: 0 auto; text-align:center; line-height:50px;}
@@ -25,7 +29,7 @@ body{text-align:center;}
 #educational-2 .custom-font {font-family: 'malabarenjaque', sans-serif;}
 #educational-3 .custom-font {font-family: 'aliados', sans-serif;}
 
-#stage-1 .custom-font {}
+/*#stage-1 .custom-font {}*/
 #stage-2 .custom-font {font-family: 'aquiencorresponda', sans-serif;}
 #stage-3 .custom-font {font-family: '', sans-serif;}
 #stage-4 .custom-font {font-family: 'convoy', sans-serif;}
@@ -35,6 +39,17 @@ body{text-align:center;}
    font-family: 'mildoscientos', sans-serif;
    font-size: large;
    font-weight: bold;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+   #stage-7 .custom-font {
+      font-size: small; 
+   } 
+}
+@media screen and (min-width: 750px) and (max-width: 1199px) {
+   #stage-7 .custom-font {
+      font-size: medium; 
+   }
 }
 #stage-8 .custom-font {font-family: 'pleroma', sans-serif;font-weight: bold;font-size: xx-large;}
 
@@ -51,7 +66,7 @@ body{text-align:center;}
    
 }
 
-@media (max-width: 768px) {
+@media (max-width: 999px) {
    .custom-gallery {
        padding: 0; /* Elimina el padding en pantallas móviles */
    }
@@ -91,7 +106,7 @@ body{text-align:center;}
 
 
 
-@media (min-width: 769px) {
+@media (min-width: 1000px) {
    .vertical-center {
        background-color: black; 
        padding: 0px !important;

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('writings', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('subtitle');
             $table->string('description');
             $table->string('big_description');
             $table->string('link_video')->nullable();

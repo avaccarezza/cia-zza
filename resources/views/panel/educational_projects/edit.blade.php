@@ -69,7 +69,7 @@
                             <label for="link_instagram" class="col-md-4 col-form-label text-md-end">{{ __('Link Instagram') }}</label>
                         
                             <div class="col-md-6">
-                                <textarea id="link_instagram" class="form-control @error('link_instagram') is-invalid @enderror" name="link_instagram"  autocomplete="link_instagram" autofocus>{{ old('link_instagram') ?? $artistic_educational->link_instagram }}</textarea>
+                                <textarea id="link_instagram" class="form-control @error('link_instagram') is-invalid @enderror" name="link_instagram"  autocomplete="link_instagram" autofocus>{{ old('link_instagram') ?? $educational_project->link_instagram }}</textarea>
                         
                                 @error('link_instagram')
                                     <span class="invalid-feedback" role="alert">

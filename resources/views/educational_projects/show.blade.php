@@ -5,30 +5,17 @@
 <div class="container fadeInUp pt-5"> 
     <div class="card mb-5 bg-light fadeInUp" style="animation-delay:2ms;">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <a href="{{ url()->previous() }}" class="btn btn-dark m-2">
                     <i class="fas fa-arrow-left"></i>
                 </a>
-
-                @if(!empty($educational_project->link_video))
-                    <a  id="showVideo" class="btn btn-dark my-2 " title="Ver video">
-                        <i class="fab fa-vimeo"></i>
-                    </a>
-                    <a  id="showImage" class="btn btn-dark" title="Ver imágenes">
-                        <i class="fas fa-image"></i>
-                    </a>
-                @endif     
-                @if(!empty($educational_project->link_instagram))  
-                <a  class="btn btn-dark m-2" href="{{ $educational_project->link_instagram }}"
-                target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                @endif
             </div>
-
+            <div class="col-md-6">
+                <h1 class="text-center mt-3 custom-font" >{{ $educational_project->title}}</h1>
             </div>
-                <div class="row">
-                    <div class="col-md-6">
+        </div>
+        <div class="row">
+           <div class="col-12 col-lg-6">
         <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
             <div id="projects_image">
             <div class="carousel-indicators">
@@ -69,18 +56,29 @@
             <span class="visually-hidden">Next</span>
             </button>
         </div>  
-            <iframe id="projects_video" class="custom-gallery"  width="100%" height="500" src="{{ $educational_project->link_video }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" style="background-color: black;"></iframe> 
     </div>
     </div>
-    <div class="col-md-6" id="artistic-{{$educational_project->id}}">
-        <h1 class="text-center mt-3 custom-font" >{{ $educational_project->title}}</h1>
+    <div class="col-12 col-lg-6" id="educational-{{$educational_project->id}}">
+      
         <p class="p-3 text-left">
                 {!! nl2br(e($educational_project->big_description)) !!}
-        </p>  
+        </p>
+        <div class="text-center p-3">
+            @if(!empty($educational_project->link_video))
+                    <a class="btn btn-primary" style="background-color: #55acee;" href="{{ $educational_project->link_video }}" target="_blank" role="button">
+                        <i class="fab fa-vimeo-v"></i>
+                    </a>  
+                @endif     
+                @if(!empty($educational_project->link_instagram))  
+                <a class="btn btn-primary" style="background-color: #ac2bac;" href="{{ $educational_project->link_instagram}}" target="_blank"role="button"
+                ><i class="fab fa-instagram"></i
+              ></a>
+                @endif
+        </div>  
     </div>
 </div>
 </div>
-  
+
 
 
 <script type="text/javascript">

@@ -20,9 +20,10 @@ class StageProjectPanelController extends Controller
     public function store(StageProjectRequest $request)
     {
         $stage_project = StageProject::create($request->validated());
-    
+
         if ($stage_project->images) {
             foreach ($stage_project->images as $image) {
+            dd($image->path);
                 $path = storage_path("app/public/stage_projects/{$image->path}");
                 File::delete($path);
                 $image->delete();

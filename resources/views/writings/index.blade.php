@@ -26,8 +26,9 @@
                                 @endforeach   
                             </div>
                             <div class="col-md-7" id="writing-{{$writing->id}}">
-                                <div class="card-body">
+                                <div class="card-body" style="height: 250px;">
                                     <h4 class="card-title text-center custom-font"><strong>{{ $writing->title }}</strong></h4>
+                                    <h5 class="card-title text-center custom-font"><strong>{{ $writing->subtitle }}</strong></h5>
                                     <p class="card-text text-center projects-p"><strong>{{ $writing->description }}</strong></p>
                                 </div>
                             </div>
@@ -39,6 +40,5 @@
         </div>
         @endif
     </div>
-   
 </div>
 @endsection
